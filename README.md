@@ -82,7 +82,8 @@ Le site web est disponible sous 2 façons différentes :
 - Allez dans le dossier /app
 - Lancer l'app.py ``python app.py``
 - Se rendre à l'adresse ``http://localhost:8002``
-- Utilisateurs autorisés(login:mdp)->hidoux.cassio.e0000001:cassio,chap.lucas.e0000002:lucas,horlaville.pierre.e0000003:pierre,cay.vincent.e0000004:vincent
+- Utilisateurs autorisés(login:mdp)
+> hidoux.cassio.e0000001:cassio,chap.lucas.e0000002:lucas,horlaville.pierre.e0000003:pierre,cay.vincent.e0000004:vincent
 
 ## Via docker:
 Pour lancer le site web, il faut installer docker et docker-compose.  
