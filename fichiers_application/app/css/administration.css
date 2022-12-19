@@ -1,0 +1,32 @@
+html {
+    background-color: #d1d1d1;
+    font-family: sans-serif;
+}
+
+#container {
+    width: 100%;
+}
+
+#containerGroup, #containerUserCas, #containerFile {
+    display: flex;
+    flex-wrap: wrap;
+    gap:5%;
+    margin-left: 10%;
+}
+
+#formCreateGroup, #formDeleteGroup, #formAddRoomToGroup, #containerMenu, #formUpdateServer, #formImport, #formforceParse {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item {
+    float:right;
+    margin-right: 5%;
+}
+
+#footer{
+    bottom:0;
+    position:absolute;
+    width:100%;
+}

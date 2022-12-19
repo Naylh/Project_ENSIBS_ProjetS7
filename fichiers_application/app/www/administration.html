@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administration</title>
+        <link href="css/administration.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $("#header").load("addons/header.html"); 
+                $("#footer").load("addons/footer.html"); 
+            });
+        </script>
+        <meta charset="UTF-8">
+    </head>
+    
+    <div id="header"></div>
+    <body>
+        <div id="container">
+            <div class="item">
+                <table id="listadmin">
+                  <thead>
+                    <th>
+                      Liste des Administrateurs
+                    </th>
+                  </thead>
+                  <tbody id="bodyAdmin">
+                  </tbody>
+                </table>
+            </div>
+            <div id="containerGroup">
+                <div class="createGroup">
+                    <h4>Créer un nouveau groupe de salle</h4>
+                    <form id="formCreateGroup">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="groupeName" name="name" placeholder="Nom du groupe">
+                        </div>
+                        <button id="buttonCreateGroup" type="submit" name="submit">Créer</button>
+                    </form>
+                </div>
+                <div class="deleteGroup">
+                    <h4>Supprimer un groupe de salle</h4>
+                    <form id="formDeleteGroup">
+                        <div class="form-group">
+                            <select id="listDeleteRoomsGroups">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <button id="buttonDeleteGroup" type="submit" name="submit">Supprimer</button>
+                    </form>
+                </div>
+                <div class="addRoomToGroup">
+                    <h4>Ajouter une salle à un groupe</h4>
+                    <form id="formAddRoomToGroup">
+                        <div class="form-group">
+                            <select id="listRoomsGroups">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="listRooms">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <button id="buttonAddRoomToGroup"  type="submit" name="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+            <div id="containerUserCas">
+                <div class="updateRole">
+                    <h4>Mise à jour rôle utilisateur</h4>
+                    <form id="formUpdateRole">
+                        <!--<div id="mail-div">-->
+                            <input type="text" onkeyup="filtreListe()" id="textMail" placeholder="Enter your mail">
+                            <!--<ul id="mail">
+                              <li><a href="#">cc</a>
+                          
+                              </li>
+                            </ul>-->
+                          
+                        <!--</div>-->
+                       <!--<div id="listMail" style="display: none;">--> 
+                        <div id="divMail" style="display: none;">
+                            <ul id="listMail">
+                              <!--<li ><a href="#">Billy</a></li>
+                              <li ><a href="#">alvin</a></li>-->
+                            </ul>
+                        </div>
+                        <div id="containerMenu">
+                            <div class="scrollingMenu">
+                                <select name="role" id="role-select">
+                                    <option value="">--Choisissez un rôle--</option>
+                                    <option value="administrateur">Administrateur</option>
+                                    <option value="superviseur">Superviseur</option>
+                                    <option value="lecteur">Lecteur</option>
+                                </select>
+                            </div>
+                            <button id="buttonUpdateRole" type="submit" name="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="updateServer">
+                    <h4>Changement serveur CAS</h4>
+                    <form id="formUpdateServer">
+                        <div class="inputBox">
+                            <input type="text" name="Serveur CAS" placeholder="IP server ?"required="">
+                            <label>Server</label>
+                        </div>
+                        <button id="buttonUpdateServer" type="submit" name="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+            <div id="containerFile">
+                <div class="import">
+                    <h4>Importer un fichier</h4>
+                    <form id="formImport">
+                        <div class="importButton">
+                            <input type = "button" value = "Choose File">
+                        </div>
+                        <button id="buttonImport" type="submit" name="submit">Update</button>
+                    </form>
+                </div>
+                <div class="forceParse">
+                    <h4>Forcer la mise à jour des fichiers</h4>
+                    <form id="formForceParse">
+                        <button id="buttonForceParse" type="submit" name="submit">Mettre à jour</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <div id="footer"></div>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/administration.js"></script>
+</html>

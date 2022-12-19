@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Planning</title>
+        <link href="css/planning.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $("#header").load("addons/header.html"); 
+                $("#footer").load("addons/footer.html"); 
+            });
+        </script>
+        <meta charset="UTF-8">
+    </head>
+    <div id="header"></div>
+    <body>
+        <div id="container">
+            <div id="filter">
+                <form id="formFilter">
+                    <div id="roomsGroups">
+                        <b>Groupes de salles</b><br>
+                        <select id="listRoomsGroups" required>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="rooms">
+                        <b>Salles</b>
+                        <table id="roomsTable" required></table>
+                    </div>
+                    <br>
+                    <div id="slot">
+                        <b>Créneaux</b>
+                        <br>
+                        <table id="slotTable">
+                            <tr>
+                                <td>de</td>
+                                <td>
+                                    <input type="time" id="timeFrom" min="08:00" max="20:00" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>à</td>
+                                <td>
+                                    <input type="time" id="timeTo" min="08:00" max="20:00" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <div id="day">
+                        <b>Date début</b>
+                        <br>
+                        <input type="date" id="dateFrom" required>
+                        <br>
+                        <br>
+                        <b>Date fin</b>
+                        <br>
+                        <input type="date" id="dateTo" required>
+                    </div>
+                    <hr>
+                    <div id="buttonFilter">
+                        <button id="saveFilter">
+                            <img alt="Enregistrer" src="images/valid.png">
+                        </button>
+                        <button type="button" id="deleteFilter">
+                            <img alt="Supprimer" src="images/trash.png">
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="planning">
+                <table id="tablePlanning">
+                    <thead>
+                        <tr id="headTable">
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTable">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div id="roomsNotAvailable">
+                <b style="display: none;">Salle(s) occupée(s)</b>
+                <ul id="roomsList">
+                </ul>
+            </div>
+            <div id="downloadPlanning">
+                <input type="button" id="downloadButton" value="Télécharger le planning" style="display: none">
+            </div>
+        </div>
+    </body>
+    <div id="footer"></div>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/planning.js"></script>
+</html>

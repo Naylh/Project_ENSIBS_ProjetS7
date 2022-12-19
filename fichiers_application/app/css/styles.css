@@ -1,0 +1,38 @@
+body{
+    background: no-repeat;
+    background-image: url("../images/fd.jpg");
+    background-size : 110%;
+}
+
+
+.action-button {
+    padding: 25px 100px;
+    float: left;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.action-button:hover {
+    color: #2980B9;
+    background-color: rgb(142, 228, 240);
+}
+
+#Identification {
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+  }
+
+  #footer {
+    position: absolute;
+    bottom:0;
+    width:100%;
+  }

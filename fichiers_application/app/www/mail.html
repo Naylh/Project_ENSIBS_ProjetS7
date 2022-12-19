@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/mail.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#header").load("addons/header.html"); 
+            $("#footer").load("addons/footer.html"); 
+        });
+    </script>
+    <meta charset="utf-8">
+</head>
+<body>
+  
+  <div id="header"></div>
+
+  <div class="container">
+    <div class="item">
+
+    
+        <form id="formFilter">
+            <div id="roomsGroups">
+                <b>Groupes de salles</b><br>
+                <select id="listRoomsGroups" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <br>
+            <div id="rooms">
+                <b>Salles</b>
+                <table id="roomsTable" required></table>
+            </div>
+            <br>
+            <button id="select">Valider</button>
+        </form>
+          <br>
+          <br>
+          <table id="salle">
+            <thead>
+              <th>
+                Salle(s) Sélectionnée(s)
+              </th>
+            </thead>
+            <tbody id="bodySalle">
+            </tbody>
+          </table>
+        
+</div>
+
+
+<div class="item">
+  <div id="alerte-div">
+    
+  <input type="range" class="range" id="tauxAlerte" min="0" max="100" value="50" oninput="tauxAlerte()">
+         <output class="bubble" id="alerteValue">0</output>
+         <br>
+<br>
+<br>
+<center><button id="update">Update</button></center>
+ 
+</div>
+</div>
+
+<div class="item">
+<table id="contact">
+  <thead>
+    <th>
+      A contacter
+    </th>
+  </thead>
+  <tbody id="bodyContact">
+  </tbody>
+</table>
+</div>
+  </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div id="maill">
+<div id="mail-div">
+ <input type="text" onkeyup="filtreListe()" id="texte" placeholder="Enter your mail">
+
+
+  
+  <!--<ul id="mail">
+    <li><a href="#">cc</a>
+
+    </li>
+  </ul>-->
+
+ <input type="button"  id="boutton" value="ADD">
+
+</div>
+<div id="list-mail" style="display: none;">
+<ul id="ul">
+  <!--<li ><a href="#">Billy</a></li>
+  <li ><a href="#">alvin</a></li>-->
+  </ul>
+</div>
+</div>
+
+<div id="footer"></div>
+<script type="text/javascript" src="../js/database.js"></script>
+<script type="text/javascript" src="../js/mail.js"></script>
+</body>

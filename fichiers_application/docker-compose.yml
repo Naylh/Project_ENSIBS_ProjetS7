@@ -1,0 +1,34 @@
+# Auteur : CHAPRON Lucas
+version: '3.8'
+services:
+    db:
+        build: ./db
+        command: --default-authentication-plugin=mysql_native_password
+        cap_add:
+            - SYS_NICE
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MDPRootBDD}
+            MYSQL_DATABASE: ${DatabaseName}
+            MYSQL_USER: ${UserMySQL}
+            MYSQL_PASSWORD: ${PasswordMySQL}
+        ports:
+            - 3306:3306
+
+    app:
+      build: ./app
+      depends_on:
+        - db
+      restart: always
+      ports:
+        - "8002:8002"
+      network_mode: "host" # Pour que l'application puisse communiquer avec le CAS
+
+    cas :
+      build: ./app/cas-ecole
+      restart: always
+      ports:
+        - "8444:8443"
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,33 @@
+.Center{
+    float : center;
+    font-family: sans-serif;
+    font-size: x-large;
+    color: white;
+}
+
+.Gauche{
+    float:left;
+}
+
+img {
+    display: flex;
+    max-width:135px;
+    max-height:55px;
+    width: auto;
+    height: auto;
+    padding-left: 3%;
+    padding-top: 12%;
+}
+
+body{
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+
+p {
+    font-size: 15px;
+    line-height: 4;
+    text-align: center;
+    background-color: rgb(70, 67, 67);
+}
